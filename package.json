@@ -1,0 +1,25 @@
+{
+  "name": "react-event-light",
+  "version": "0.0.1",
+  "description": "npm package for react app",
+  "type": "module",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "vite build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "react",
+    "event",
+    "hook"
+  ],
+  "author": "D.Voloshyn",
+  "license": "ISC",
+  "devDependencies": {
+    "vite": "^5.2.10"
+  }
+}
