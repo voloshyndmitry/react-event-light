@@ -1,4 +1,4 @@
-type REACT_EVENT_CHANNEL_NAME = string;
+type REACT_EVENT_LIGHT_CHANNEL_NAME = string;
 
 type DataType = string | number | object;
 
@@ -11,7 +11,7 @@ interface Subscribers {
 const subscribers: Subscribers = {};
 
 export const subscribe = (
-  event: REACT_EVENT_CHANNEL_NAME,
+  event: REACT_EVENT_LIGHT_CHANNEL_NAME,
   callback: Callback
 ) => {
   if (!subscribers[event]) {
@@ -26,7 +26,7 @@ export const subscribe = (
 };
 
 export const publish = (
-  event: REACT_EVENT_CHANNEL_NAME,
+  event: REACT_EVENT_LIGHT_CHANNEL_NAME,
   data: DataType
 ): void => {
   if (subscribers[event]) {
@@ -34,12 +34,12 @@ export const publish = (
   }
 };
 
-export const useReactEvent = (): [
+export const useEventLight = (): [
   (
-    event: REACT_EVENT_CHANNEL_NAME,
+    event: REACT_EVENT_LIGHT_CHANNEL_NAME,
     callback: Callback
   ) => { unsubscribe: () => void },
-  (event: REACT_EVENT_CHANNEL_NAME, data: DataType) => void
+  (event: REACT_EVENT_LIGHT_CHANNEL_NAME, data: DataType) => void
 ] => {
   return [subscribe, publish];
 };

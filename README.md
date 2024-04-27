@@ -7,17 +7,17 @@ A simple and lightweight package to facilitate an event-driven architecture in R
 Install the package via npm:
 
 ```bash
-npm install react-event-channel
+npm install react-event-light -S
 ```
 
 ## Usage
 
 ### Importing
 
-First, import the `useReactEvent` hook into your React component:
+First, import the `useEventLight` hook into your React component:
 
 ```javascript
-import { useReactEvent } from "react-event-channel";
+import { useEventLight } from "react-event-channel";
 ```
 
 ### Subscribing to Events
@@ -26,10 +26,10 @@ You can subscribe to an event to listen for any data that gets published on that
 
 ```javascript
 import React, { useEffect } from "react";
-import { useReactEvent } from "react-event-channel";
+import { useEventLight } from "react-event-channel";
 
 function MyComponent() {
-  const [subscribe, publish] = useReactEvent();
+  const [subscribe, publish] = useEventLight();
 
   useEffect(() => {
     const subscription = subscribe("my-event", (data) => {
@@ -53,10 +53,10 @@ To publish data to an event channel, so that all subscribers to that channel can
 
 ```javascript
 import React from "react";
-import { useReactEvent } from "react-event-channel";
+import { useEventLight } from "react-event-channel";
 
 function PublisherComponent() {
-  const [, publish] = useReactEvent();
+  const [, publish] = useEventLight();
 
   const sendData = () => {
     publish("my-event", { message: "Hello from PublisherComponent!" });
@@ -70,8 +70,8 @@ export default PublisherComponent;
 
 ## API
 
-- subscribe(event: REACT_EVENT_CHANNEL_NAME, callback: Callback): Subscribe to an event. Returns an object with an unsubscribe method to stop listening for the event.
-- publish(event: REACT_EVENT_CHANNEL_NAME, data: DataType): Publish data to all subscribers of the specified event.
+- subscribe(event: REACT_EVENT_LIGHT_CHANNEL_NAME, callback: Callback): Subscribe to an event. Returns an object with an unsubscribe method to stop listening for the event.
+- publish(event: REACT_EVENT_LIGHT_CHANNEL_NAME, data: DataType): Publish data to all subscribers of the specified event.
 
 ## TypeScript Support
 
